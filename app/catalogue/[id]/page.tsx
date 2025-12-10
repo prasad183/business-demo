@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { Card } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
+import { BackButton } from '@/components/ui/BackButton';
 import { catalogueItems, providers } from '@/data/sampleData';
 
 export default function CatalogueDetailPage() {
@@ -49,15 +50,7 @@ export default function CatalogueDetailPage() {
       {/* Header */}
       <div className="sticky top-0 z-40 bg-[var(--surface)] border-b border-[var(--border)] px-4 py-4">
         <div className="max-w-4xl mx-auto flex items-center gap-4">
-          <Link
-            href="/catalogue"
-            className="flex h-11 w-11 items-center justify-center rounded-lg hover:bg-[var(--surface-light)] transition-colors"
-            aria-label="Go back"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </Link>
+          <BackButton fallbackPath="/catalogue" />
           <h1 className="text-xl font-semibold text-[var(--text-primary)] flex-1">
             {item.name}
           </h1>

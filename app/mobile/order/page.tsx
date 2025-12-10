@@ -39,7 +39,7 @@ export default function MobileOrderPage() {
   return (
     <div className="min-h-screen bg-[var(--surface)] pb-20">
       <OfflineBanner isOffline={isOffline} />
-      <AppBar title="Order Taking" />
+      <AppBar title="Order Taking" showBack />
 
       <div className="px-4 py-6">
         {/* Table Selector */}

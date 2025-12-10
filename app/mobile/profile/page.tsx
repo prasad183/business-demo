@@ -19,7 +19,7 @@ export default function MobileProfilePage() {
 
   return (
     <div className="min-h-screen bg-[var(--surface)] pb-20">
-      <AppBar title="Profile" />
+      <AppBar title="Profile" showBack />
 
       <div className="px-4 py-6 space-y-6">
         {/* Profile Card */}

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { EmptyState } from '@/components/ui/EmptyState';
+import { BackButton } from '@/components/ui/BackButton';
 import { bookings, transactions } from '@/data/sampleData';
 
 export default function AccountPage() {
@@ -15,7 +16,10 @@ export default function AccountPage() {
   return (
     <div className="min-h-screen bg-[var(--surface)] px-4 py-6 pb-24">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-semibold text-[var(--text-primary)] mb-6">My Account</h1>
+        <div className="flex items-center gap-4 mb-6">
+          <BackButton fallbackPath="/user" />
+          <h1 className="text-2xl font-semibold text-[var(--text-primary)]">My Account</h1>
+        </div>
 
         {/* Profile Card */}
         <Card variant="elevated" className="p-6 mb-6">

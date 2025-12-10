@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/Card';
 import { Drawer } from '@/components/ui/Drawer';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { BackButton } from '@/components/ui/BackButton';
 import { catalogueItems } from '@/data/sampleData';
 
 export default function CataloguePage() {
@@ -32,7 +33,10 @@ export default function CataloguePage() {
       {/* Header */}
       <div className="sticky top-0 z-40 bg-[var(--surface)] border-b border-[var(--border)] px-4 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <h1 className="text-2xl font-semibold text-[var(--text-primary)]">Catalogue</h1>
+          <div className="flex items-center gap-4">
+            <BackButton fallbackPath="/user" />
+            <h1 className="text-2xl font-semibold text-[var(--text-primary)]">Catalogue</h1>
+          </div>
           <div className="flex items-center gap-4">
             <button
               type="button"

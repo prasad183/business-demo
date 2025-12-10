@@ -154,6 +154,51 @@ export default function EmployeesPage() {
           </Card>
         )}
 
+        {/* Role & Permission Matrix */}
+        <Card variant="outlined" className="p-6 mt-6">
+          <h2 className="text-lg font-semibold text-[var(--text-primary)] mb-4">Role & Permission Matrix</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-[var(--border)]">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-[var(--text-primary)]">Module</th>
+                  <th className="text-center py-3 px-4 text-sm font-semibold text-[var(--text-primary)]">Owner</th>
+                  <th className="text-center py-3 px-4 text-sm font-semibold text-[var(--text-primary)]">Manager</th>
+                  <th className="text-center py-3 px-4 text-sm font-semibold text-[var(--text-primary)]">Accountant</th>
+                  <th className="text-center py-3 px-4 text-sm font-semibold text-[var(--text-primary)]">HR</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { module: 'Dashboard', owner: true, manager: true, accountant: true, hr: false },
+                  { module: 'Catalogue', owner: true, manager: true, accountant: false, hr: false },
+                  { module: 'CRM', owner: true, manager: true, accountant: false, hr: false },
+                  { module: 'Employees', owner: true, manager: false, accountant: false, hr: true },
+                  { module: 'Bookings', owner: true, manager: true, accountant: false, hr: false },
+                  { module: 'Transactions', owner: true, manager: false, accountant: true, hr: false },
+                  { module: 'Reports', owner: true, manager: true, accountant: true, hr: false },
+                ].map((row, index) => (
+                  <tr key={index} className="border-b border-[var(--border)]">
+                    <td className="py-4 px-4 font-medium text-[var(--text-primary)]">{row.module}</td>
+                    <td className="py-4 px-4 text-center">
+                      <input type="checkbox" checked={row.owner} readOnly className="rounded" />
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <input type="checkbox" checked={row.manager} readOnly className="rounded" />
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <input type="checkbox" checked={row.accountant} readOnly className="rounded" />
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <input type="checkbox" checked={row.hr} readOnly className="rounded" />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Card>
+
         {/* Payroll Export */}
         <Card variant="outlined" className="p-6 mt-6">
           <div className="flex items-center justify-between">

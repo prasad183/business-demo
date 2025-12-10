@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
 import { SeatMap } from '@/components/ui/SeatMap';
 import type { Seat } from '@/components/ui/SeatMap';
+import { BackButton } from '@/components/ui/BackButton';
 
 export default function ShowsPage() {
   const [selectedShow, setSelectedShow] = useState<string | null>(null);
@@ -69,7 +70,10 @@ export default function ShowsPage() {
   return (
     <div className="min-h-screen bg-[var(--surface)] px-4 py-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-2xl font-semibold text-[var(--text-primary)] mb-6">Showtimes & Seating</h1>
+        <div className="flex items-center gap-4 mb-6">
+          <BackButton fallbackPath="/user" />
+          <h1 className="text-2xl font-semibold text-[var(--text-primary)]">Showtimes & Seating</h1>
+        </div>
 
         {/* Show List */}
         <div className="mb-8">

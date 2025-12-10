@@ -56,7 +56,7 @@ export default function MobileSchedulePage() {
 
   return (
     <div className="min-h-screen bg-[var(--surface)] pb-20">
-      <AppBar title="Provider Day View" />
+      <AppBar title="Provider Day View" showBack />
 
       <div className="px-4 py-6 space-y-6">
         {/* Timeline */}

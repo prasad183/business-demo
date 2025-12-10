@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 interface AppBarProps {
   title?: string;
@@ -10,6 +11,12 @@ interface AppBarProps {
 }
 
 export function AppBar({ title, showBack = false, actions, variant = 'default' }: AppBarProps) {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 flex h-14 items-center justify-between px-4 ${
@@ -21,6 +28,7 @@ export function AppBar({ title, showBack = false, actions, variant = 'default' }
         {showBack && (
           <button
             type="button"
+            onClick={handleBack}
             className="flex h-11 w-11 items-center justify-center rounded-lg hover:bg-[var(--surface-light)] transition-colors"
             aria-label="Go back"
           >

@@ -30,7 +30,7 @@ export default function MobileStockPage() {
 
   return (
     <div className="min-h-screen bg-[var(--surface)] pb-20">
-      <AppBar title="Stock Management" />
+      <AppBar title="Stock Management" showBack />
 
       <div className="px-4 py-6 space-y-6">
         {/* Low Stock Banner */}

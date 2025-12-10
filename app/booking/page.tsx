@@ -5,6 +5,7 @@ import { Stepper } from '@/components/ui/Stepper';
 import { Card } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
 import { CalendarGrid } from '@/components/ui/CalendarGrid';
+import { BackButton } from '@/components/ui/BackButton';
 import { catalogueItems, providers } from '@/data/sampleData';
 
 export default function BookingPage() {
@@ -57,7 +58,10 @@ export default function BookingPage() {
   return (
     <div className="min-h-screen bg-[var(--surface)] px-4 py-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-semibold text-[var(--text-primary)] mb-6">Book a Service</h1>
+        <div className="flex items-center gap-4 mb-6">
+          <BackButton fallbackPath="/user" />
+          <h1 className="text-2xl font-semibold text-[var(--text-primary)]">Book a Service</h1>
+        </div>
 
         <Stepper steps={steps} currentStep={currentStep} className="mb-8" />
 

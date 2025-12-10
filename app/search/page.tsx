@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Card } from '@/components/ui/Card';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { BackButton } from '@/components/ui/BackButton';
 import { catalogueItems } from '@/data/sampleData';
 
 function SearchContent() {
@@ -41,7 +42,10 @@ function SearchContent() {
   return (
     <div className="min-h-screen bg-[var(--surface)] px-4 py-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-2xl font-semibold text-[var(--text-primary)] mb-6">Search</h1>
+        <div className="flex items-center gap-4 mb-6">
+          <BackButton fallbackPath="/user" />
+          <h1 className="text-2xl font-semibold text-[var(--text-primary)]">Search</h1>
+        </div>
 
         {/* Search Bar */}
         <form onSubmit={handleSearch} className="mb-6">
